@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-dic-2019 11.36.51 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="jdbc.DAOUsers" table="DAOUSERS" abstract="true">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <list name="allUsers" inverse="false" table="USERS" lazy="true">
+            <key></key>
+            <list-index></list-index>
+            <one-to-many class="jdbc.Users" />
+        </list>
+    </class>
+</hibernate-mapping>
